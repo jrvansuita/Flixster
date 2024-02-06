@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Flixster</string>
     <string name="no_movies_to_show">No movies to show :(</string>
+    <string name="most_popular_movies">Most Popular Movies</string>
+    <string name="most_popular_tv_shows">Most Popular Tv Shows</string>
+
+
+    <string name="genres_label">Genres: %s</string>
+    <string name="authors_label">Authors: %s</string>
+    <string name="type_label">Type: %s</string>
 </resources>

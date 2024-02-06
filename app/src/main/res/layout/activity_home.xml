@@ -19,17 +19,48 @@
         app:subtitleTextColor="@color/white"
         app:titleTextColor="@color/white" />
 
+    <TextView
+        android:id="@+id/top_movies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/default_padding"
+        android:text="@string/most_popular_movies"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+        android:id="@+id/movies_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ECEFF1"
+        android:background="@color/white"
+        android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:listitem="@layout/movie_item" />
+        app:layout_constraintTop_toBottomOf="@id/top_movies"
+        tools:listitem="@layout/cover_item" />
+
+    <TextView
+        android:id="@+id/top_tv_shows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/default_padding"
+        android:text="@string/most_popular_tv_shows"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/movies_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tv_shows_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_tv_shows"
+        tools:listitem="@layout/cover_item" />
 
     <TextView
         android:id="@+id/message"
@@ -43,9 +74,10 @@
         tools:visibility="visible" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progress_bar"
+        android:indeterminate="true"
         android:visibility="gone"
         app:indicatorColor="@color/blue"
         app:indicatorSize="64dp"
@@ -54,7 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:trackColor="@color/white"
-        android:indeterminate="true"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
